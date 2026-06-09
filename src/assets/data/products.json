@@ -272,16 +272,10 @@
 
     "variants": [
       {
-        "name": "Blíster",
+        "name": "Caja",
         "units": 10,
         "image": "/images/products/ibufast-1.webp",
         "price": 15.9
-      },
-      {
-        "name": "Caja",
-        "units": 20,
-        "image": "/images/products/ibufast-2.webp",
-        "price": 28.9
       }
     ],
 
@@ -360,12 +354,6 @@
         "units": 50,
         "image": "/images/products/ibufast-1.webp",
         "price": 18.9
-      },
-      {
-        "name": "Tubo",
-        "units": 100,
-        "image": "/images/products/ibufast-2.webp",
-        "price": 32.9
       }
     ],
 
