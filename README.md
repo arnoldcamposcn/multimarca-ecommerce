@@ -1,4 +1,4 @@
-# Multimarca Ecommerce — Inkafarma
+# Multimarca Ecommerce 
 
 E-commerce farmacéutico en **Angular 21** con SSR híbrido, signals, SEO dinámico y Analytics GA4. Arquitectura orientada a escalabilidad multimarca.
 
