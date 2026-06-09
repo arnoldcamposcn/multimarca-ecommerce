@@ -1,0 +1,25 @@
+<div class="quantity-selector">
+  @if (quantity() === 1) {
+    <button type="button" class="action-button" (click)="remove()">
+      <app-icon src="/images/icons/delete.svg" alt="Agregar" [size]="16"> 
+      </app-icon>    
+    </button>
+  
+  
+  
+  } @else {
+    <button type="button" class="counter-button" (click)="decrement()">
+      <app-icon src="/images/icons/icon-menos.svg" alt="Agregar" [size]="12"> 
+
+      </app-icon>
+      </button>
+  }
+
+  <span class="quantity">
+    {{ quantity() }}
+  </span>
+
+  <button type="button" class="counter-button" (click)="increment()">
+    <app-icon src="/images/icons/mass-icon.svg" alt="Agregar" [size]="20"> </app-icon>
+  </button>
+</div>

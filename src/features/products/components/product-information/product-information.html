@@ -1,0 +1,73 @@
+<div class="product-information">
+
+  <div class="accordion-item">
+    <button
+      class="accordion-header"
+      type="button"
+      (click)="toggle('description')">
+
+      <span>Descripción larga</span>
+      <span
+        class="accordion-chevron"
+        [class.is-open]="openedSection() === 'description'"
+      >
+        <app-icon [src]="'/images/icons/arrow-top.svg'" [width]="14" [height]="14" />
+      </span>
+
+    </button>
+
+    @if (openedSection() === 'description') {
+      <div class="accordion-content">
+        {{ description() }}
+      </div>
+    }
+  </div>
+
+  <div class="accordion-item">
+    <button
+      class="accordion-header"
+      type="button"
+      (click)="toggle('composition')">
+
+      <span>Composición</span>
+      <span
+        class="accordion-chevron"
+        [class.is-open]="openedSection() === 'composition'"
+      >
+      <app-icon [src]="'/images/icons/arrow-top.svg'" [width]="14" [height]="14" />
+      </span>
+
+    </button>
+
+    @if (openedSection() === 'composition') {
+      <div class="accordion-content">
+        {{ composition() }}
+      </div>
+    }
+  </div>
+
+  <div class="accordion-item">
+    <button
+      class="accordion-header"
+      type="button"
+      (click)="toggle('contraindications')">
+
+      <span>Contraindicaciones</span>
+      <span
+        class="accordion-chevron"
+        [class.is-open]="openedSection() === 'contraindications'"
+      >
+      <app-icon [src]="'/images/icons/arrow-top.svg'" [width]="14" [height]="14" />
+
+      </span>
+
+    </button>
+
+    @if (openedSection() === 'contraindications') {
+      <div class="accordion-content">
+        {{ contraindications() }}
+      </div>
+    }
+  </div>
+
+</div>

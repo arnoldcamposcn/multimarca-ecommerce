@@ -1,0 +1,28 @@
+.button {
+
+  border: none;
+  border-radius: 200px;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 13.5px 0;
+  transition: .2s ease;
+  font-size: 14px;
+}
+
+.button--full {
+  width: 100%;
+}
+
+.button--primary {
+
+  background: #1f96d1;
+  color: #fff;
+
+}
+
+.button--success {
+
+  background: #17A15B;
+  color: #fff;
+
+}

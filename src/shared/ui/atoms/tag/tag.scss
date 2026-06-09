@@ -1,0 +1,51 @@
+.tag {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 4px 8px;
+
+  border-radius: 16px;
+
+  background: #F3F4F6;
+
+  color: #374151;
+
+  font-weight: 500;
+}
+
+.tag--interest {
+  background: #e9f3fd;
+}
+
+.tag-icon {
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #7E8BA7;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+}
+
+.tag-icon--interest {
+  background-color: #1a8ff1;
+}
+
+.tag-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.tag--interest .tag-label {
+  color: #1a8ff1;
+}

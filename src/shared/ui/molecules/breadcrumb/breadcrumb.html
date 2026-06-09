@@ -1,0 +1,14 @@
+<nav class="breadcrumb" aria-label="Breadcrumb">
+
+  <a class="breadcrumb__link" routerLink="/categorias/todos">Inicio</a>
+  <app-icon class="breadcrumb__arrow" [src]="'/images/icons/arrow-top.svg'" [width]="14" [height]="14" aria-hidden="true" />
+
+  @if (productName()) {
+    <a class="breadcrumb__link" [routerLink]="['/categorias', category()]">{{ categoryLabel() }}</a>
+    <app-icon class="breadcrumb__arrow" [src]="'/images/icons/arrow-top.svg'" [width]="14" [height]="14" aria-hidden="true" />
+    <span class="breadcrumb__current" aria-current="page">{{ productName() }}</span>
+  } @else {
+    <span class="breadcrumb__current" aria-current="page">{{ categoryLabel() }}</span>
+  }
+
+</nav>

@@ -1,0 +1,18 @@
+<div class="tag" [class.tag--interest]="variant() === 'interest'">
+
+  @if (icon()) {
+
+  <div class="tag-icon" [class.tag-icon--interest]="variant() === 'interest'">
+    <app-icon
+      [src]="icon()!"
+      [alt]="label()"
+      [size]="12"
+    />
+  </div>
+  }
+
+  <span class="tag-label">
+    {{ label() }}
+  </span>
+
+</div>

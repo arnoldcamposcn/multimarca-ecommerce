@@ -1,0 +1,27 @@
+<header class="site-header">
+
+  <app-top-banner message="Envio gratis en compras mayores a S/ 99 — Entrega rapida a domicilio en todo el pais" />
+
+  <div class="main-container">
+    <div class="header-main">
+
+      <div class="header-main__left">
+        <a routerLink="/" aria-label="Ir a la página de inicio de Inkafarma">
+          <app-logo src="/images/logos/inkafarma.svg" alt="Inkafarma" />
+        </a>
+
+        <app-search-bar />
+      </div>
+
+      <div class="header-main__right">
+        <app-cart-button [count]="cartCount()" (click)="cartUiService.open()" />
+      </div>
+
+    </div>
+  </div>
+
+  @if (cartUiService.isMiniCartOpen()) {
+    <app-mini-cart-drawer />
+  }
+
+</header>

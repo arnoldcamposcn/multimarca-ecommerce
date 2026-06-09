@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="catalog">
+
+    <app-category-filter
+      [categories]="categories()"
+      [selectedCategory]="selectedCategory()"
+      (categorySelected)="onCategorySelected($event)"
+      (clearFilters)="onClearFilters()"
+    />
+
+    <div class="catalog__content">
+      <h1 class="catalog__title">{{ categoryTitle() }}</h1>
+
+      @if (isLoading()) {
+        <app-state-feedback
+          state="loading"
+          loadingMessage="Cargando productos..."
+        />
+      } @else if (error()) {
+        <app-state-feedback
+          state="error"
+          [errorMessage]="error()!"
+          [showAction]="true"
+          actionLabel="Reintentar"
+          (action)="onRetry()"
+        />
+      } @else if (isEmpty()) {
+        <app-state-feedback
+          state="empty"
+          emptyMessage="No hay productos en esta categoría."
+        />
+      } @else {
+        <div class="products-grid">
+          @for (product of filteredProducts(); track product.id; let i = $index) {
+            <app-product-card [product]="product" [priority]="i < 4" />
+          }
+        </div>
+      }
+    </div>
+
+  </div>
+
+  @if (isMiniCartOpen()) {
+    <app-mini-cart-drawer (closed)="isMiniCartOpen.set(false)" />
+  }
+</div>

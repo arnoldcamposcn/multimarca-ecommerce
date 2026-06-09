@@ -1,0 +1,51 @@
+<div class="overlay">
+  <aside class="mini-cart">
+    <header class="mini-cart__header">
+      <h2 class="mini-cart__title">
+        <app-icon src="/images/icons/shop.svg" [size]="36" alt="Carrito" />
+        Mi carrito ({{ cartCount() }})
+      </h2>
+
+      <button type="button" class="mini-cart__close" (click)="close()">✕</button>
+    </header>
+
+    <div class="mini-cart__products">
+      @if (cartService.items().length === 0) {
+        <p>Tu carrito está vacío.</p>
+      } @else {
+        @for (item of cartService.items(); track item.id) {
+          <app-cart-item
+            [productId]="item.id"
+            [image]="item.image"
+            [title]="item.name"
+            [presentation]="item.presentation"
+            [price]="item.price"
+            [quantity]="item.quantity"
+            (remove)="removeItem($event)"
+          />
+        }
+      }
+    </div>
+
+    <div class="mini-cart__summary">
+      <div class="mini-cart__summary-row">
+        <span class="title-summary"> Subtotal </span>
+
+        <span class="title-summary"> S/ {{ subtotal().toFixed(2) }} </span>
+      </div>
+    </div>
+
+    <footer class="mini-cart__actions">
+      <button type="button" class="secondary-button" (click)="goToCart()">Ir a mi carrito</button>
+      
+      <app-button
+      class="mini-cart__buy-now"
+      label="Comprar ahora"
+      variant="success"
+      [fullWidth]="true"
+      (click)="goToCheckout()">
+      </app-button>
+      
+    </footer>
+  </aside>
+</div>

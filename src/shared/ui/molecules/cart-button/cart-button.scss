@@ -1,0 +1,31 @@
+.cart-button {
+  width: 68px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background: #eef7ff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cart-button app-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.cart-count {
+  display: flex;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+
+  color: #1677ff;
+}

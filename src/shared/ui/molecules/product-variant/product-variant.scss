@@ -1,0 +1,142 @@
+:host {
+  display: block;
+}
+
+:host + :host .variant-card {
+  border-top: 0;
+}
+
+.variant-card {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #d9e1ed;
+  border-radius: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.variant-card:hover {
+  border-color: #b8c6db;
+}
+
+.variant-card:focus-visible {
+  outline: 2px solid #1a8ff1;
+  outline-offset: 2px;
+}
+
+.variant-card--selected {
+  border-color: #1a8ff1;
+  position: relative;
+  z-index: 1;
+}
+
+.variant-card--inactive .variant-card__title {
+  color: #354159;
+}
+
+.variant-card--inactive .variant-card__price {
+  color: #7e8ba7;
+}
+
+.variant-card--first {
+  border-radius: 12px 12px 0 0;
+}
+
+.variant-card--last {
+  border-radius: 0 0 12px 12px;
+}
+
+.variant-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.variant-card__image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.variant-card__title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #354159;
+}
+
+.variant-card__price {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #7E8BA7;
+}
+
+.variant-card__radio {
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #d2d9e6;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.variant-card__radio-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1a8ff1;
+}
+
+.variant-card--selected .variant-card__radio {
+  border-color: #1a8ff1;
+}
+
+.variant-card--inactive .variant-card__radio {
+  border-color: #d2d9e6;
+}
+
+@media (max-width: 1024px) {
+  .variant-card {
+    min-height: auto;
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .variant-card__image {
+    width: 34px;
+    height: 34px;
+  }
+
+  .variant-card__title {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .variant-card__price {
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .variant-card__radio {
+    width: 18px;
+    height: 18px;
+  }
+
+  .variant-card__radio-inner {
+    width: 8px;
+    height: 8px;
+  }
+}

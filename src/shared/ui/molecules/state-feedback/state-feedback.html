@@ -1,0 +1,44 @@
+<section
+  class="state-feedback"
+  [attr.role]="ariaRole()"
+  [attr.aria-live]="ariaLive()"
+>
+  @if (state() === 'loading') {
+    <div class="state-feedback__inline">
+      <span class="loader" aria-hidden="true"></span>
+      <p class="state-feedback__text">{{ loadingMessage() }}</p>
+    </div>
+  }
+
+  @else if (state() === 'error') {
+    <p class="state-feedback__text">
+      {{ errorMessage() }}
+    </p>
+
+    @if (showAction()) {
+      <button
+        type="button"
+        class="state-feedback__action"
+        (click)="onAction()"
+      >
+        {{ actionLabel() }}
+      </button>
+    }
+  }
+
+  @else if (state() === 'empty') {
+    <p class="state-feedback__text">
+      {{ emptyMessage() }}
+    </p>
+
+    @if (showAction()) {
+      <button
+        type="button"
+        class="state-feedback__action"
+        (click)="onAction()"
+      >
+        {{ actionLabel() }}
+      </button>
+    }
+  }
+</section>

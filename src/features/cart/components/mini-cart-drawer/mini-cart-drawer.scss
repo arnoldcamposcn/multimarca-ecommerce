@@ -1,0 +1,179 @@
+.overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  z-index: 1000;
+}
+
+.mini-cart {
+  width: 420px;
+
+  height: 100vh;
+
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-cart__products {
+  flex: 1;
+  padding: 16px 24px 24px;
+}
+
+.mini-cart__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  line-height: 1.2;
+}
+
+.mini-cart__close {
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  font-size: 1.5rem;
+
+  line-height: 1;
+}
+
+.mini-cart__header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 16px 24px;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mini-cart__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 24px;
+}
+
+.mini-cart__summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px 24px;
+}
+
+.mini-cart__actions button,
+.mini-cart__actions app-button {
+  flex: 1;
+}
+
+.mini-cart__buy-now {
+  width: 100%;
+}
+
+.secondary-button{
+  border: none;
+  background: #ffffff;
+  cursor: pointer;
+  color: #1a8ff1;
+  border-radius: 10px;
+  min-height: 44px;
+  font-weight: 600;
+  padding: 0 12px;
+}
+
+.title-summary {
+  font-size: 14px;
+  color: #243455;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .mini-cart {
+    width: min(380px, 100vw);
+  }
+
+  .mini-cart__header {
+    padding: 14px 18px;
+  }
+
+  .mini-cart__title {
+    font-size: 1.1rem;
+    gap: 0.4rem;
+  }
+
+  .mini-cart__products {
+    padding: 14px 18px 18px;
+  }
+
+  .mini-cart__summary-row {
+    padding: 0 18px 18px;
+    font-size: 14px;
+  }
+
+  .mini-cart__actions {
+    padding: 18px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    justify-content: center;
+  }
+
+  .mini-cart {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100dvh;
+  }
+
+  .mini-cart__header {
+    padding: 12px 16px;
+  }
+
+  .mini-cart__title {
+    font-size: 1rem;
+  }
+
+  .mini-cart__products {
+    padding: 12px 16px 16px;
+  }
+
+  .mini-cart__summary-row {
+    padding: 0 16px 16px;
+    font-size: 13px;
+  }
+
+  .mini-cart__actions {
+    flex-direction: row;
+    align-items: stretch;
+    padding: 16px;
+    gap: 8px;
+  }
+
+  .mini-cart__actions button,
+  .mini-cart__actions app-button {
+    width: auto;
+  }
+}

@@ -1,0 +1,80 @@
+<div class="product-card">
+  <div class="product-card__image" (click)="navigateToProduct()">
+    <img
+      [src]="product().images[0]"
+      [alt]="product().name"
+      [loading]="priority() ? 'eager' : 'lazy'"
+      [attr.fetchpriority]="priority() ? 'high' : null"
+      width="248"
+      height="248"
+    />
+  </div>
+
+  <div class="product-card__content">
+    <div class="product-head">
+      <span class="unit">
+        {{ product().variants[0].name }}
+        {{ product().variants[0].units }}UN
+      </span>
+
+      <h3 class="title">
+        {{ product().name }}
+      </h3>
+    </div>
+
+    <div class="metadata">
+      <app-tag label="Te puede interesar" icon="/images/icons/interest.svg" variant="interest" />
+
+      <app-tag label="Inkafarma" icon="/images/icons/isotipo.svg" />
+    </div>
+
+    @if (prices(); as p) {
+      <div class="prices">
+        <div class="price-row">
+          <span class="price-regular"> S/ {{ p.regular.toFixed(2) }} </span>
+        </div>
+
+        <div class="price-row">
+          <span class="price-promo"> S/ {{ p.promo.toFixed(2) }} </span>
+
+          <app-promo-tag [label]="'-' + product().discounts.promotion + '%'" variant="secondary" />
+        </div>
+
+        <div class="price-row">
+          <span class="price-card"> S/ {{ p.card.toFixed(2) }} </span>
+
+          <div class="price-row__card-icon">
+            <app-icon
+              [src]="'/images/icons/CreditCard.svg'"
+              [alt]="'Tarjeta de crédito'"
+              [width]="45"
+              [height]="45"
+            />
+
+            <app-promo-tag [label]="'-' + product().discounts.card + '%'" variant="primary" />
+          </div>
+        </div>
+      </div>
+    }
+
+    <div class="actions">
+      @if (!addedToCart()) {
+        <app-button
+          label="Agregar al carrito"
+          variant="success"
+          [fullWidth]="true"
+          (click)="onAddToCart()"
+        />
+      } @else {
+        <app-quantity-selector
+          [quantity]="cartQuantity()"
+          (incremented)="increaseQuantity()"
+          (decremented)="decreaseQuantity()"
+          (removed)="onRemoveFromCart()"
+        />
+      }
+
+      <app-favorite-button />
+    </div>
+  </div>
+</div>

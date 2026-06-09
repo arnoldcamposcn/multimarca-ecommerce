@@ -1,0 +1,107 @@
+<div class="container">
+  <section class="checkout-page">
+    <article class="checkout-card">
+      <h1 class="checkout-title">Finalizar compra</h1>
+      <p class="checkout-subtitle">Completa tus datos para continuar con el pedido.</p>
+
+      <form class="checkout-form">
+        <h2 class="checkout-section-title">Datos de contacto</h2>
+
+        <div class="checkout-field">
+          <label for="fullName">Nombres y apellidos</label>
+          <input id="fullName" type="text" placeholder="Ej. Juan Perez" autocomplete="name" />
+        </div>
+
+        <div class="checkout-field">
+          <label for="email">Correo electrónico</label>
+          <input id="email" type="email" placeholder="correo@ejemplo.com" autocomplete="email" />
+        </div>
+
+        <div class="checkout-grid">
+          <div class="checkout-field">
+            <label for="phone">Teléfono</label>
+            <input id="phone" type="tel" placeholder="999 999 999" autocomplete="tel" />
+          </div>
+
+          <div class="checkout-field">
+            <label for="dni">DNI</label>
+            <input id="dni" type="text" placeholder="12345678" autocomplete="off" inputmode="numeric" maxlength="8" />
+          </div>
+        </div>
+
+        <h2 class="checkout-section-title">Dirección de entrega</h2>
+
+        <div class="checkout-field">
+          <label for="address">Dirección</label>
+          <input id="address" type="text" placeholder="Av. Ejemplo 123" autocomplete="street-address" />
+        </div>
+
+        <div class="checkout-grid">
+          <div class="checkout-field">
+            <label for="district">Distrito</label>
+            <input id="district" type="text" placeholder="San Isidro" autocomplete="address-level2" />
+          </div>
+
+          <div class="checkout-field">
+            <label for="reference">Referencia</label>
+            <input id="reference" type="text" placeholder="Casa azul, puerta negra" autocomplete="off" />
+          </div>
+        </div>
+      </form>
+
+      <button type="button" class="checkout-card__cta">
+        Finalizar compra
+      </button>
+    </article>
+
+    <article class="checkout-summary-card">
+      <h2 class="checkout-summary-card__title">Resumen de pedido</h2>
+
+      <div class="checkout-divider"></div>
+
+      <p class="checkout-summary-card__brand">Inkafarma ({{ cartCount() }})</p>
+
+      <div class="checkout-divider"></div>
+
+      @if (cartItems().length === 0) {
+        <p class="checkout-item__empty">No hay productos en el carrito.</p>
+      } @else {
+        @for (item of cartItems(); track item.id + '-' + item.presentation) {
+          <div class="checkout-item">
+            <img
+              class="checkout-item__image"
+              [src]="item.image"
+              [alt]="item.name"
+              loading="lazy"
+              width="64"
+              height="64"
+            />
+
+            <div class="checkout-item__content">
+              <p class="checkout-item__name">{{ item.name }}</p>
+              <p class="checkout-item__variant">{{ item.presentation }}</p>
+              <p class="checkout-item__qty">Cantidad: {{ item.quantity }}</p>
+            </div>
+
+            <p class="checkout-item__price">S/ {{ (item.price * item.quantity).toFixed(2) }}</p>
+          </div>
+        }
+      }
+
+      <div class="checkout-divider"></div>
+
+      <div class="checkout-total-row">
+        <span>Subtotal</span>
+        <span>S/ {{ subtotal().toFixed(2) }}</span>
+      </div>
+
+      <div class="checkout-divider"></div>
+
+      <div class="checkout-total-row checkout-total-row--strong">
+        <strong>Total</strong>
+        <strong>S/ {{ subtotal().toFixed(2) }}</strong>
+      </div>
+
+    </article>
+  </section>
+</div>

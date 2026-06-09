@@ -1,0 +1,26 @@
+<div class="filter-card">
+  <div class="filter-card__header">
+    <h3 class="title-filter">Filtros</h3>
+
+    <button type="button" (click)="clear()" class="clear-filter">Limpiar filtros</button>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="filter-card__content">
+    <h4 class="title-category">Categorías</h4>
+
+    @for (category of categories(); track category) {
+      <label class="category-item">
+        <input
+          type="checkbox"
+          [checked]="selectedCategory() === category"
+          (change)="selectCategory(category)"
+          class="checkbox"
+        />
+
+        <span>{{ category }}</span>
+      </label>
+    }
+  </div>
+</div>

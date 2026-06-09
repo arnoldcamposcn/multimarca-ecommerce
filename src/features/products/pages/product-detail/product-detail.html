@@ -1,0 +1,142 @@
+<div class="container">
+  <div class="product-detail-page">
+    @if (isLoading()) {
+      <app-state-feedback state="loading" loadingMessage="Cargando producto..." />
+    } @else if (error()) {
+      <app-state-feedback
+        state="error"
+        [errorMessage]="error()!"
+        [showAction]="true"
+        actionLabel="Reintentar"
+        (action)="onRetry()"
+      />
+    } @else if (product(); as selectedProduct) {
+      <app-breadcrumb
+        [category]="selectedProduct.category"
+        [productName]="selectedProduct.name"
+      />
+
+      <div class="product-box product-box--main">
+        <div class="product-detail__image">
+          <app-product-gallery [images]="selectedProduct.images" />
+        </div>
+
+        <div class="product-detail__content">
+          <div class="product-detail__meta">
+            @if (selectedVariant(); as currentVariant) {
+              <span class="product-detail__unit"
+                >{{ currentVariant.name }} {{ currentVariant.units }} UN</span
+              >
+            }
+            <span class="product-detail__sku">SKU {{ selectedProduct.sku }}</span>
+          </div>
+
+          <h1 class="product-detail__title">{{ selectedProduct.name }}</h1>
+
+          @if (prices(); as calculatedPrices) {
+            <div class="product-detail__prices-box">
+              <div class="product-detail__prices">
+                <span>Precio regular</span>
+                <span class="product-detail__regular-price"
+                  >S/ {{ calculatedPrices.regularPrice.toFixed(2) }}</span
+                >
+              </div>
+
+              <div class="product-detail__prices">
+                <span>Precio promocional</span>
+                <div class="product-detail__price-group">
+                  <span class="product-detail__price-value"
+                    >S/ {{ calculatedPrices.promotionPrice.toFixed(2) }}</span
+                  >
+                  <app-promo-tag
+                    [label]="'-' + selectedProduct.discounts.promotion + '%'"
+                    variant="secondary"
+                  />
+                </div>
+              </div>
+
+              <div class="product-detail__prices">
+                <span>Exclusivo con tarjeta</span>
+                <div class="product-detail__price-group">
+                  <div class="price-row__card-icon">
+                    <app-icon
+                      [src]="'/images/icons/CreditCard.svg'"
+                      [alt]="'Tarjeta de crédito'"
+                      [width]="45"
+                      [height]="45"
+                    />
+                  </div>
+                  <span class="product-detail__price-value"
+                    >S/ {{ calculatedPrices.cardPrice.toFixed(2) }}</span
+                  >
+                  <app-promo-tag
+                    [label]="'-' + selectedProduct.discounts.card + '%'"
+                    variant="primary"
+                  />
+                </div>
+              </div>
+            </div>
+          }
+
+          <p class="product-detail__short-description">
+            {{ selectedProduct.shortDescription }}
+          </p>
+
+          <div class="product-variants" role="radiogroup" aria-label="Seleccion de presentacion">
+            <h2 class="title-variants">
+              <span class="title-variants__label">Presentación:</span>
+              <span class="title-variants__value">{{ selectedVariant()?.name }}</span>
+            </h2>
+
+            @for (
+              variant of selectedProduct.variants;
+              track $index;
+              let index = $index;
+              let isFirst = $first;
+              let isLast = $last
+            ) {
+              <app-product-variant
+                [variant]="variant"
+                [productImage]="selectedProduct.images[0]"
+                [selected]="selectedVariantIndex() === index"
+                [isFirst]="isFirst"
+                [isLast]="isLast"
+                (selectedChange)="selectVariant(index)"
+              />
+            }
+          </div>
+
+          <div class="product-detail__actions">
+            @if (!addedToCart()) {
+              <app-button
+                label="Agregar al carrito"
+                variant="success"
+                [fullWidth]="true"
+                (click)="onAddToCart()"
+              />
+            } @else {
+              <app-quantity-selector
+                [quantity]="cartQuantity()"
+                (incremented)="increaseQuantity()"
+                (decremented)="decreaseQuantity()"
+                (removed)="onRemoveFromCart()"
+              />
+            }
+            <app-favorite-button />
+          </div>
+        </div>
+      </div>
+      <div class="accordion-box">
+        <app-product-information
+          [description]="selectedProduct.longDescription"
+          [composition]="selectedProduct.composition"
+          [contraindications]="selectedProduct.contraindications"
+        />
+      </div>
+
+      <div>
+        <app-related-products [products]="relatedProducts()" />
+      </div>
+    }
+  </div>
+</div>

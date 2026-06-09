@@ -1,0 +1,45 @@
+<section class="related-products">
+    <div class="related-products__header">
+      <h2 class="related-products__title">
+        Productos relacionados
+      </h2>
+
+      @if (products().length > 0) {
+        <div class="related-products__nav">
+          <button
+            type="button"
+            class="related-products__nav-btn related-products__nav-btn--prev"
+            aria-label="Anterior"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            class="related-products__nav-btn related-products__nav-btn--next"
+            aria-label="Siguiente"
+          >
+            ›
+          </button>
+        </div>
+      }
+    </div>
+
+    @if (products().length > 0) {
+      <app-carousel>
+    
+        @for (product of products(); track product.id) {
+    
+          <swiper-slide>
+    
+            <app-product-card
+              [product]="product"
+            />
+    
+          </swiper-slide>
+    
+        }
+    
+      </app-carousel>
+    }
+  
+  </section>

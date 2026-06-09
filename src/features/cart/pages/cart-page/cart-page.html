@@ -1,0 +1,140 @@
+<div class="container"> 
+<div class="cart-page">
+
+  <section class="cart-page__products">
+
+    <header class="cart-page__header">
+
+      <h1>
+        Inkafarma ({{ items().length }})
+      </h1>
+
+    </header>
+
+    <div class="cart-table-header">
+
+      <span>PRODUCTOS</span>
+
+      <span>PRESENTACIÓN</span>
+
+      <span>CANTIDAD</span>
+
+      <span>SUB TOTAL</span>
+
+      <span></span>
+
+    </div>
+
+    @for (
+      item of items();
+      track item.id
+    ) {
+
+      <div class="cart-row">
+
+        <div class="cart-row__product">
+
+          <img
+            [src]="item.image"
+            [alt]="item.name"
+            loading="lazy"
+            width="80"
+            height="80"
+          >
+
+          <div>
+
+            <h3>
+              {{ item.name }}
+            </h3>
+
+            <small>
+              {{ getVariantName(item.presentation) }}
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="cart-row__presentation">
+
+          {{ getVariantName(item.presentation) }}
+
+        </div>
+
+        <div class="cart-row__quantity">
+
+          <app-quantity-selector
+            [quantity]="item.quantity"
+            (incremented)="increase(item.id)"
+            (decremented)="decrease(item.id)"
+            (removed)="remove(item.id)"
+          />
+
+        </div>
+
+        <div class="cart-row__subtotal">
+
+          S/ {{
+            (item.price * item.quantity)
+              .toFixed(2)
+          }}
+
+        </div>
+
+        <button
+          type="button"
+          class="cart-row__remove"
+          (click)="remove(item.id)"
+        >
+          Eliminar
+        </button>
+
+      </div>
+
+    }
+
+  </section>
+
+  <aside class="cart-summary">
+
+    <h2 class="cart-summary__title">
+      Resumen de compra
+    </h2>
+
+    <div class="summary-row">
+
+      <span class="summary-row__label">
+        Subtotal
+      </span>
+
+      <span class="summary-row__value">
+        S/ {{ subtotal().toFixed(2) }}
+      </span>
+
+    </div>
+
+    <div class="summary-row">
+
+      <strong class="summary-row__total-label">
+        Total a pagar
+      </strong>
+
+      <strong class="summary-row__total-value">
+        S/ {{ subtotal().toFixed(2) }}
+      </strong>
+
+    </div>
+
+    <button
+      type="button"
+      class="checkout-button"
+      (click)="goToCheckout()"
+    >
+      Ir a comprar
+    </button>
+
+  </aside>
+
+</div>
+</div>

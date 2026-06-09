@@ -1,0 +1,25 @@
+<swiper-container
+  navigation="true"
+  navigation-prev-el=".related-products__nav-btn--prev"
+  navigation-next-el=".related-products__nav-btn--next"
+  pagination="false"
+  watch-overflow="true"
+  loop="false"
+  rewind="false"
+  [attr.space-between]="spaceBetween()"
+
+  breakpoints='{
+    "320": {
+      "slidesPerView": 1.2
+    },
+    "768": {
+      "slidesPerView": 2
+    },
+    "1024": {
+      "slidesPerView": 4
+    }
+  }'
+>
+  <ng-content />
+
+</swiper-container>

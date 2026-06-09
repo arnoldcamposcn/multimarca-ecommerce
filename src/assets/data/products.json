@@ -1,0 +1,382 @@
+[
+  {
+    "id": 1,
+    "sku": "GRI001",
+    "slug": "pharamol-antigripal",
+
+    "name": "Pharamol Antigripal 500mg + 5mg + 2mg",
+    "category": "gripe",
+
+    "shortDescription": "Alivio de fiebre, congestión y malestar por gripe.",
+  "longDescription": "Pharamol Antigripal combina analgésico, antihistamínico y descongestionante para el manejo temporal de síntomas de resfrío y gripe.",
+    "composition": "Paracetamol 500 mg, Clorfeniramina maleato 5 mg, Fenilefrina clorhidrato 2 mg.",
+    "contraindications": "No usar en caso de hipersensibilidad a sus componentes, enfermedad hepática severa o uso concomitante con otros productos que contengan paracetamol.",
+
+    "images": [
+      "/images/products/pharamol.webp",
+      "/images/products/pharamol-2.webp",
+      "/images/products/pharamol-3.webp"
+    ],
+
+    "discounts": {
+      "promotion": 5,
+      "card": 20
+    },
+
+    "variants": [
+      {
+        "name": "Sobre",
+        "units": 1,
+        "image": "/images/products/pharamol-1.webp",
+        "price": 1.9
+      },
+      {
+        "name": "Caja",
+        "units": 10,
+        "image": "/images/products/pharamol-2.webp",
+        "price": 14.9
+      }
+    ],
+
+    "searchCount": 200,
+
+    "relatedProductIds": [2, 3, 4]
+  },
+  {
+    "id": 2,
+    "sku": "GRI002",
+    "slug": "gripacheck-capsula-blanda",
+
+    "name": "Gripacheck Cápsula Blanda - Caja 100 UN",
+    "category": "gripe",
+
+
+    "shortDescription": "Ayuda a reducir fiebre y congestión nasal.",
+    "longDescription": "Gripacheck Cápsula Blanda está formulado para aliviar síntomas comunes del resfrío como dolor corporal, fiebre y congestión.",
+    "composition": "Paracetamol 650 mg, Fenilefrina clorhidrato 10 mg.",
+    "contraindications": "No administrar a menores de 12 años, embarazo sin supervisión médica o personas con hipertensión no controlada.",
+
+    "images": [
+      "/images/products/gripacheck.webp",
+      "/images/products/gripacheck-2.webp",
+      "/images/products/gripacheck-3.webp"
+    ],
+
+    "discounts": {
+      "promotion": 10,
+      "card": 15
+    },
+
+    "variants": [
+      {
+        "name": "Blíster",
+        "units": 10,
+        "image": "/images/products/gripax-1.webp",
+        "price": 9.9
+      },
+      {
+        "name": "Caja",
+        "units": 20,
+        "image": "/images/products/gripax-2.webp",
+        "price": 17.9
+      }
+    ],
+
+    "searchCount": 180,
+
+    "relatedProductIds": [1, 3, 4]
+  },
+
+  {
+    "id": 3,
+    "sku": "GRIP10",
+    "slug": "grip-10-comprimido-recubierto",
+
+    "name": "Vick Grip-10 Comprimido Recubierto",
+    "category": "gripe",
+
+
+    "shortDescription": "Comprimido recubierto para síntomas gripales moderados.",
+    "longDescription": "Vick Grip-10 Comprimido Recubierto brinda alivio de fiebre, dolor de cabeza y malestar general asociados al proceso gripal.",
+    "composition": "Paracetamol 500 mg, Clorfeniramina maleato 2 mg, Fenilefrina clorhidrato 5 mg.",
+    "contraindications": "No usar en embarazo o lactancia sin indicación médica. Evitar en caso de hipersensibilidad a antihistamínicos o paracetamol.",
+
+    "images": [
+      "/images/products/grip.webp",
+      "/images/products/grip-2.webp",
+      "/images/products/grip-3.webp"
+    ],
+
+    "discounts": {
+      "promotion": 8,
+      "card": 12
+    },
+
+    "variants": [
+      {
+        "name": "Sobre",
+        "units": 1,
+        "image": "/images/products/resfrix-1.webp",
+        "price": 1.5
+      },
+      {
+        "name": "Caja",
+        "units": 12,
+        "image": "/images/products/resfrix-2.webp",
+        "price": 13.9
+      }
+    ],
+
+    "searchCount": 120,
+
+    "relatedProductIds": [1, 2, 4]
+  },
+  {
+    "id": 4,
+    "sku": "DOMGrippa2",
+    "slug": "don-grippa-500mg5mg2mg-tableta-recubierta",
+
+    "name": "Don Grippa 500mg+5mg+2mg Tableta Recubierta",
+    "category": "gripe",
+
+
+    "shortDescription": "Tableta recubierta para congestión, fiebre y dolor.",
+    "longDescription": "Don Grippa Tableta Recubierta está diseñado para aliviar síntomas de gripe de intensidad moderada a alta durante periodos cortos.",
+    "composition": "Paracetamol 500 mg, Clorfeniramina maleato 5 mg, Fenilefrina clorhidrato 2 mg.",
+    "contraindications": "Evitar consumo de alcohol durante su uso. No usar en pacientes con enfermedad hepática o alergia a sus componentes.",
+
+    "images": ["/images/products/dongripa.webp", "/images/products/dongripa-2.webp"],
+
+    "discounts": {
+      "promotion": 12,
+      "card": 18
+    },
+
+    "variants": [
+      {
+        "name": "Caja",
+        "units": 100,
+        "image": "/images/products/antiflu-1.webp",
+        "price": 42.9
+      }
+    ],
+
+    "searchCount": 90,
+
+    "relatedProductIds": [1, 2, 3]
+  },
+
+  {
+    "id": 5,
+    "sku": "ANTIFLUGRIP2",
+    "slug": "pharamol-grip-cb-325-mg-10-mg-5-mg",
+
+    "name": "Pharamol Grip CB 325 mg + 10 mg + 5 mg",
+    "category": "gripe",
+
+
+    "shortDescription": "Antigripal para congestión, dolor y malestar estacional.",
+    "longDescription": "Pharamol Grip CB combina analgésico, antihistamínico y descongestionante para controlar síntomas de gripe en cuadros leves a moderados.",
+    "composition": "Paracetamol 325 mg, Fenilefrina clorhidrato 10 mg, Clorfeniramina maleato 5 mg.",
+    "contraindications": "No usar en menores de 12 años, pacientes con hipertensión no controlada o personas con alergia a alguno de sus componentes.",
+
+    "images": [
+      "/images/products/gripcb.webp",
+      "/images/products/gripcb-2.webp",
+      "/images/products/gripcb-3.webp"
+    ],
+
+    "discounts": {
+      "promotion": 10,
+      "card": 15
+    },
+
+    "variants": [
+      {
+        "name": "Sobre",
+        "units": 1,
+        "image": "/images/products/gripax-1.webp",
+        "price": 2.2
+      },
+      {
+        "name": "Caja",
+        "units": 20,
+        "image": "/images/products/gripax-2.webp",
+        "price": 29.9
+      }
+    ],
+
+    "searchCount": 180,
+
+    "relatedProductIds": [1, 3, 4]
+  },
+  {
+    "id": 7,
+    "sku": "DOLORAL001",
+    "slug": "doloral-100mg-5ml-suspension-oral",
+
+    "name": "Doloral 100mg/5ml Suspensión Oral",
+    "category": "dolor",
+
+
+    "shortDescription": "Suspensión oral para dolor y fiebre en uso pediátrico.",
+    "longDescription": "Doloral Suspensión Oral está formulado para aliviar dolor leve a moderado y ayudar a controlar la fiebre, con dosificación según indicación profesional.",
+    "composition": "Paracetamol 100 mg / 5 ml.",
+    "contraindications": "No exceder la dosis recomendada y evitar su uso en caso de enfermedad hepática severa o hipersensibilidad al paracetamol.",
+
+    "images": ["/images/products/doloral.webp"],
+
+    "discounts": {
+      "promotion": 5,
+      "card": 10
+    },
+
+    "variants": [
+      {
+        "name": "Frasco",
+        "units": 60,
+        "image": "/images/products/dolocet-1.webp",
+        "price": 8.9
+      },
+      {
+        "name": "Frasco",
+        "units": 120,
+        "image": "/images/products/dolocet-2.webp",
+        "price": 14.9
+      }
+    ],
+
+    "searchCount": 250,
+
+    "relatedProductIds": [6, 7, 8]
+  },
+
+  {
+    "id": 8,
+    "sku": "PARCHEDOLOR002",
+    "slug": "parches-para-dolores-de-columna-y-espalda-x-10-unidades",
+
+    "name": "Parches para Dolores de Columna y Espalda x 10 unidades",
+    "category": "dolor",
+
+
+    "shortDescription": "Parches tópicos para espalda, cuello y zona lumbar.",
+    "longDescription": "Parches para Dolores de Columna y Espalda brindan sensación analgésica localizada y de efecto prolongado para molestias musculares cotidianas.",
+    "composition": "Mentol, alcanfor y agentes tópicos de efecto térmico.",
+    "contraindications": "No aplicar sobre piel irritada o lesionada. Suspender uso en caso de irritación cutánea.",
+
+    "images": [
+      "/images/products/parche-dolor.webp",
+      "/images/products/parche-dolor-2.webp",
+      "/images/products/parche-dolor-3.webp"
+    ],
+
+    "discounts": {
+      "promotion": 8,
+      "card": 15
+    },
+
+    "variants": [
+      {
+        "name": "Blíster",
+        "units": 10,
+        "image": "/images/products/ibufast-1.webp",
+        "price": 15.9
+      },
+      {
+        "name": "Caja",
+        "units": 20,
+        "image": "/images/products/ibufast-2.webp",
+        "price": 28.9
+      }
+    ],
+
+    "searchCount": 300,
+
+    "relatedProductIds": [5, 7, 8]
+  },
+  {
+    "id": 9,
+    "sku": "GORROGEL23P",
+    "slug": "gorro-gel-para-aliviar-dolor-de-cabeza-migrana",
+
+    "name": "Gorro Gel para Aliviar Dolor de Cabeza Migraña",
+    "category": "dolor",
+
+
+    "shortDescription": "Compresa tipo gorro para alivio de migraña y tensión.",
+    "longDescription": "Gorro Gel reutilizable para terapia de frío o calor, ideal para molestias por migraña, cefalea tensional y fatiga.",
+    "composition": "Gel térmico reutilizable encapsulado en material flexible.",
+    "contraindications": "No usar sobre piel con heridas abiertas o pérdida de sensibilidad térmica. Evitar temperaturas extremas sin protección.",
+
+    "images": [
+      "/images/products/dolor-cabeza.webp",
+      "/images/products/dolor-cabeza-2.webp",
+      "/images/products/dolor-cabeza-3.webp"
+    ],
+
+    "discounts": {
+      "promotion": 8,
+      "card": 15
+    },
+
+    "variants": [
+      {
+        "name": "Unidad",
+        "units": 1,
+        "image": "/images/products/ibufast-1.webp",
+        "price": 29.9
+      },
+      {
+        "name": "Pack",
+        "units": 2,
+        "image": "/images/products/ibufast-2.webp",
+        "price": 52.9
+      }
+    ],
+
+    "searchCount": 300,
+
+    "relatedProductIds": [5, 7, 8]
+  },
+  {
+    "id": 10,
+    "sku": "FLEXACIL249PO",
+    "slug": "crema-flexacil-ultra-alivio-rapido",
+
+    "name": "Crema Flexacil Ultra - Alivio Rápido",
+    "category": "dolor",
+
+
+    "shortDescription": "Crema tópica para alivio muscular y articular.",
+    "longDescription": "Flexacil Ultra Alivio Rápido está diseñado para masajes locales en zonas de tensión muscular y molestias articulares de uso diario.",
+    "composition": "Mentol, alcanfor, salicilato de metilo y excipientes de uso tópico.",
+    "contraindications": "Solo uso externo. No aplicar en rostro, mucosas o piel lesionada. Suspender en caso de irritación.",
+
+    "images": ["/images/products/flexacil.webp", "/images/products/flexacil-2.webp"],
+
+    "discounts": {
+      "promotion": 8,
+      "card": 15
+    },
+
+    "variants": [
+      {
+        "name": "Tubo",
+        "units": 50,
+        "image": "/images/products/ibufast-1.webp",
+        "price": 18.9
+      },
+      {
+        "name": "Tubo",
+        "units": 100,
+        "image": "/images/products/ibufast-2.webp",
+        "price": 32.9
+      }
+    ],
+
+    "searchCount": 300,
+
+    "relatedProductIds": [5, 7, 8]
+  }
+]

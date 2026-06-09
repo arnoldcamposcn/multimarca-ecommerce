@@ -1,0 +1,53 @@
+<div class="cart-item">
+
+  <div class="cart-item__image">
+
+    <img
+      [src]="image()"
+      [alt]="title()"
+      loading="lazy"
+      width="80"
+      height="80"
+    />
+
+  </div>
+
+  <div class="cart-item__content">
+
+    <h3 class="cart-item__title">
+
+      {{ title() }}
+
+    </h3>
+
+    <p class="cart-item__presentation">
+      {{ presentation() }}
+    </p>
+
+    <p class="cart-item__quantity">
+
+      Cantidad: {{ quantity() }}
+
+    </p>
+
+  </div>
+
+  <div class="cart-item__actions">
+
+    <span class="title-summary">
+
+      S/ {{ price().toFixed(2) }}
+
+    </span>
+
+    <button
+      type="button"
+      class="cart-item__remove"
+      (click)="onRemove()"
+    >
+      Eliminar
+    </button>
+
+  </div>
+
+</div>
