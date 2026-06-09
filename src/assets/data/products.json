@@ -237,12 +237,6 @@
         "units": 60,
         "image": "/images/products/dolocet-1.webp",
         "price": 8.9
-      },
-      {
-        "name": "Frasco",
-        "units": 120,
-        "image": "/images/products/dolocet-2.webp",
-        "price": 14.9
       }
     ],
 
