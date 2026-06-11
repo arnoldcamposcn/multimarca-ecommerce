@@ -19,7 +19,5 @@ export class Header {
   readonly cartUiService = inject(CartUiService);
   readonly cartService = inject(CartService);
 
-  readonly cartCount = computed(() =>
-    this.cartService.items().reduce((total, item) => total + item.quantity, 0)
-  );
+  readonly cartCount = computed(() => this.cartService.items().length);
 }
